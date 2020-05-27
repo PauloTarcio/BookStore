@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { AppRoutingModule } from './app-routing.module';
 import { MenuPrincipalHorizontalComponent } from './shared/components/menu-principal-horizontal/menu-principal-horizontal.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { MenuPrincipalHorizontalComponent } from './shared/components/menu-princ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

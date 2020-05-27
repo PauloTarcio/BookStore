@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LastbooksComponent } from './lastbooks/lastbooks.component';
-import { ListBooksComponent } from './list-books/list-books.component';
 
+import { ListBooksComponent } from './list-books/list-books.component';
+import { CrudBookComponent } from './list-books/crud-book/crud-book.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LastbooksComponent,
-  },
-  {
-    path: 'listBook',
-    component: ListBooksComponent,
-  }
+  { path: '', component: ListBooksComponent },
+  { path: 'listBooks', component: ListBooksComponent },
+  { path: 'crudBook/new', component: CrudBookComponent },
+  { path: 'crudBook/:id', component: CrudBookComponent },
+  { path: 'crudBook/:id/edit', component: CrudBookComponent }
 ];
 
 @NgModule({

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-menu-principal-horizontal',
   templateUrl: './menu-principal-horizontal.component.html',

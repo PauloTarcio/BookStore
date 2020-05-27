@@ -1,1 +1,12 @@
-<app-table-info></app-table-info>
+<div>
+  <h2>Register Authors</h2>
+  <hr>
+</div>
+
+<app-table-info
+  [datas] ="authors"
+  caption = 'Authors'
+  [tableheaders] = "['#Id', 'Name', 'Sex', 'Action']"
+  rota = 'authors/crudAuthor'
+  >
+</app-table-info>

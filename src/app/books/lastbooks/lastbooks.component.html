@@ -1,8 +1,8 @@
 <h2 class="font-weight-bold mb-2">Last 5 books</h2>
-<p class="font-italic text-muted mb-4">Ultimos livros cadastrados no sistema.</p>
+<p class="font-italic text-muted mb-4">Últimos livros cadastrados no sistema.</p>
 
-<div class="row pb-5 mb-4">
-  <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-    <app-book-cards></app-book-cards>
+<div class="container flex">
+  <div *ngFor="let lastbook of lastbooks">
+    <app-book-cards [cardBook] = "lastbook"></app-book-cards>
   </div>
 </div>

@@ -1,3 +1,5 @@
+import { SearchModule } from './../shared/components/search/search.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +8,7 @@ import { LastbooksComponent } from './lastbooks/lastbooks.component';
 import { BookCardsComponent } from './book-cards/book-cards.component';
 import { ListBooksComponent } from './list-books/list-books.component';
 import { CrudBookComponent } from './list-books/crud-book/crud-book.component';
+
 import { TableInfoModule } from './../shared/components/table-info/table-info.module';
 
 @NgModule({
@@ -13,7 +16,9 @@ import { TableInfoModule } from './../shared/components/table-info/table-info.mo
   exports:[LastbooksComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     BooksRoutingModule,
+    SearchModule,
     TableInfoModule,
   ]
 })

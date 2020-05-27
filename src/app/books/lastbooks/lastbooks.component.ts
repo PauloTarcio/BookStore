@@ -1,3 +1,4 @@
+import { BookService } from './../../shared/services/book.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LastbooksComponent implements OnInit {
 
-  constructor() { }
+  lastbooks;
 
-  ngOnInit(): void {
+  constructor(private bookService: BookService) { }
+
+  ngOnInit() {
+    this.getLastBooks();
+  }
+
+  getLastBooks() {
+    this.lastbooks = this.bookService.getLastBooks();
   }
 
 }

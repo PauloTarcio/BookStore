@@ -1,2 +1,6 @@
  .table-header .btn-primary{ float:left }
- .btn-edit {margin-right: 15px;}
+
+ .inactive {
+   background-color: #ca000029;
+   text-decoration: line-through;
+}

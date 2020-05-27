@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AuthorService } from 'src/app/shared/services/author.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-last-authors',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LastAuthorsComponent implements OnInit {
 
-  constructor() { }
+  cardAuthors;
+
+  constructor(private authorService: AuthorService) { }
 
   ngOnInit(): void {
+    this.toGetAllAuthors();
   }
+
+  toGetAllAuthors(){
+    this.cardAuthors = this.authorService.getAuthors();
+  }
+
 
 }

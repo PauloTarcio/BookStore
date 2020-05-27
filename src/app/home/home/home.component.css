@@ -1,0 +1,11 @@
+picture > img { opacity: 0.5; }
+
+.title {
+  color:#343a40;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.searching { width: 600px; }

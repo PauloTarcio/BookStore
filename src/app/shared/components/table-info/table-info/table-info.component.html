@@ -1,64 +1,47 @@
 <div class="shadow p-3 mb-5 bg-white rounded">
 
-<div class="table-header">
-  <button type="button" class="btn btn-primary">Novo</button>
-  <app-pagination></app-pagination>
-</div>
+  <div class="table-header">
+    <button type="button" class="btn btn-primary" (click)=redirectToRoute()>Novo</button>
+    <app-pagination></app-pagination>
+  </div>
 
-<table class="table text-center table-striped table-bordered">
+  <table class="table text-center table-bordered">
 
     <thead class='thead-dark'>
-
       <tr>
-        <th scope="col">Cod.</th>
-        <th scope="col">Book</th>
-        <th scope="col">Author</th>
-        <th scope="col">Genre</th>
-        <th scope="col">Action</th>
+        <th *ngFor='let tableheader of tableheaders' scope="col">{{ tableheader }}</th>
       </tr>
-
     </thead>
 
     <tbody>
 
-      <tr>
-        <td>1</td>
-        <td>Harry Potter</td>
-        <td>J. K. Rowling</td>
-        <td>Fantasia</td>
+      <tr *ngFor='let data of datas' [ngClass]="!data.Active ? 'inactive': null">
+        <td *ngIf=data.Id> {{data.Id}} </td>
+        <td class='text-left' *ngIf=data.Name>{{data.Name}}</td>
+        <td *ngIf=data.Author>{{data.Author}}</td>
+        <td *ngIf=data.Sex>{{data.Sex}}</td>
+        <td *ngIf=data.Genre>{{data.Genre}}</td>
         <td>
-          <button type="button" class="btn btn-outline-success btn-edit">Edit</button>
-          <button type="button" class="btn btn-outline-danger">Delete</button>
-        </td>
-      </tr>
+          <button *ngIf="data.Active" type="button" class="btn btn-outline-secondary mr-4" (click)="toInactivateRegister(data)">
+            <i class="far fa-trash-alt"></i>
+          </button>
 
-      <tr>
-        <td>2</td>
-        <td>Harry Potter</td>
-        <td>J. K. Rowling</td>
-        <td>Fantasia</td>
-        <td>
-          <button type="button" class="btn btn-outline-success btn-edit">Edit</button>
-          <button type="button" class="btn btn-outline-danger">Delete</button>
-        </td>
-      </tr>
+          <button *ngIf="!data.Active" type="button" class="btn btn-outline-secondary mr-4">
+            <i class="fas fa-trash-restore"></i>
+          </button>
 
-      <tr>
-        <td>3</td>
-        <td>Harry Potter</td>
-        <td>J. K. Rowling</td>
-        <td>Fantasia</td>
-        <td>
-          <button type="button" class="btn btn-outline-success btn-edit">Edit</button>
-          <button type="button" class="btn btn-outline-danger">Delete</button>
+          <button *ngIf="data.Active" type="button" class="btn btn-outline-success mr-4" [routerLink]="['/' + rota, data.Id, 'edit']">
+            <i class="fas fa-edit"></i>
+          </button>
+
+          <button type="button" class="btn btn-outline-info mr-4" [routerLink]="['/' + rota, data.Id]">
+            <i class="fa fa-search"></i>
+          </button>
+
         </td>
       </tr>
 
     </tbody>
-
-    <caption>List of books</caption>
-
+    <caption>List of {{ caption }}</caption>
   </table>
 </div>
-
-

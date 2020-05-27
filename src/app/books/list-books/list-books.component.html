@@ -1,1 +1,15 @@
-<app-table-info></app-table-info>
+<header class="grid mt-3">
+  <h2>Register Books</h2>
+  <div class='searching'>
+    <app-search></app-search>
+  </div>
+</header>
+
+<hr />
+
+<app-table-info
+  [datas]="books"
+  caption="Books"
+  [tableheaders]="['#Id', 'Name', 'Author', 'Genre', 'Action']"
+  rota = "books/crudBook"
+></app-table-info>

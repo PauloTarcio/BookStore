@@ -1,9 +1,9 @@
 <h2 class="font-weight-bold mb-2">Autores</h2>
 <p class="font-italic text-muted mb-4">Ultimos autores cadastrados no sistema.</p>
 
-<div class="row pb-5 mb-4">
-  <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-    <app-authors-card></app-authors-card>
+<div class="container flex">
+  <div *ngFor="let author of cardAuthors">
+    <app-authors-card [author]= "author"></app-authors-card>
   </div>
 </div>
 
