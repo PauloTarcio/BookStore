@@ -1,9 +1,13 @@
 
-<header>
-  <app-menu-principal-horizontal></app-menu-principal-horizontal>
-</header>
+<div class='grid grid-template-areas'>
 
-<section class="container">
-  <router-outlet></router-outlet>
-  <footer></footer>
-</section>
+  <header class='header'>
+    <app-menu-principal-horizontal></app-menu-principal-horizontal>
+  </header>
+
+  <section class="conteudo container shadow p-3 mt-3 bg-white rounded-0">
+      <router-outlet></router-outlet>
+  </section>
+
+  <footer class='footer'></footer>
+</div>

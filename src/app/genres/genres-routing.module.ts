@@ -7,6 +7,8 @@ const routes: Routes = [
   { path: '', component: ListGenresComponent },
   { path: 'listGenres', component: ListGenresComponent },
   { path: 'crudGenre/new', component: CrudGenreComponent },
+  { path: 'crudGenre/:id/view', component: CrudGenreComponent },
+  { path: 'crudGenre/:id/edit', component: CrudGenreComponent },
 ];
 
 @NgModule({

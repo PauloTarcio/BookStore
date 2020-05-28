@@ -1,10 +1,14 @@
-<div>
-  <h2>Register Genres</h2>
-  <hr />
-</div>
-
+<header class="grid">
+  <h2>Register Genre</h2>
+  <div class="searching">
+    <app-search></app-search>
+  </div>
+</header>
+<hr />
 <app-table-info
-[tableheaders]="['#Id', 'Name', 'Action']"
-caption = 'Genres'
-rota = "genres/crudGenre"
-></app-table-info>
+  rota="genres/crudGenre"
+  [datas]="genres"
+  [tableheaders]="['#Id', 'Name', 'Action']"
+  caption="Genres"
+>
+</app-table-info>

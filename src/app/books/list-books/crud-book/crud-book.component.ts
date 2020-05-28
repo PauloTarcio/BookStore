@@ -30,17 +30,7 @@ export class CrudBookComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    debugger;
-    if(this.router.url.includes('/edit')){
-      this.isOnEdition = true;
-    }
-
-    if(this.isOnEdition){
-      this.toGetBookInfoById();
-    } else {
-      this.toResetForm();
       this.toCreateForm();
-    }
   }
 
   toCreateForm() {
@@ -58,7 +48,6 @@ export class CrudBookComponent implements OnInit {
   };
 
   toGetBookInfoById() {
-    debugger;
     this.subscription = this.route.params
     .subscribe(params => { this.book = params.id;});
     this.toGetAuthors();
@@ -66,10 +55,12 @@ export class CrudBookComponent implements OnInit {
 
   toResetForm = () => this.bookForm.reset()
 
-  onSubmit = () => this.submitted = true;
+  onFormSubmit = () => this.submitted = true;
 
   toCancelOperation = () => this.location.back();
 
   toGetAuthors = () => this.authors = this.authorService.getAuthors();
+
+  isFormInvalid = (controls) => this.submitted && !this.bookForm.controls[controls].value
 
 }

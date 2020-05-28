@@ -1,5 +1,6 @@
-picture > img { opacity: 0.5; }
-
+picture > img {
+  opacity: 0.9;
+}
 .title {
   color:#343a40;
   position: absolute;

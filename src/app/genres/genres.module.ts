@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -5,6 +6,7 @@ import { GenresRoutingModule } from './genres-routing.module';
 import { ListGenresComponent } from './list-genres/list-genres.component';
 import { TableInfoModule } from '../shared/components/table-info/table-info.module';
 import { CrudGenreComponent } from './list-genres/crud-genre/crud-genre.component';
+import { SearchModule } from '../shared/components/search/search.module';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { CrudGenreComponent } from './list-genres/crud-genre/crud-genre.componen
   imports: [
     CommonModule,
     GenresRoutingModule,
+    ReactiveFormsModule,
+    SearchModule,
     TableInfoModule
   ]
 })

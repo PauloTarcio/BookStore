@@ -1,0 +1,16 @@
+
+.grid {display: grid; }
+
+.header { grid-area: header; }
+
+.conteudo { grid-area: conteudo; }
+
+.footer { grid-area: footer; }
+
+
+.grid-template-areas {
+  grid-template-areas:
+  "header header header"
+  "conteudo conteudo conteudo"
+  "footer footer footer"
+}

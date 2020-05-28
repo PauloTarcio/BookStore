@@ -1,12 +1,14 @@
-<div>
+<header class="grid">
   <h2>Register Authors</h2>
-  <hr>
-</div>
+  <div class='searching'>
+    <app-search></app-search>
+  </div>
+</header>
 
-<app-table-info
-  [datas] ="authors"
-  caption = 'Authors'
-  [tableheaders] = "['#Id', 'Name', 'Sex', 'Action']"
-  rota = 'authors/crudAuthor'
-  >
-</app-table-info>
+<hr>
+
+<section>
+  <app-table-info [datas]="authors" caption='Authors' [tableheaders]="['#Id', 'Name', 'Sex', 'Action']"
+    rota='authors/crudAuthor'>
+  </app-table-info>
+</section>

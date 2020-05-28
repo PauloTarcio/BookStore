@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LastAuthorsComponent implements OnInit {
 
-  cardAuthors;
+  lastAuthors;
 
   constructor(private authorService: AuthorService) { }
 
@@ -17,8 +17,9 @@ export class LastAuthorsComponent implements OnInit {
   }
 
   toGetAllAuthors(){
-    this.cardAuthors = this.authorService.getAuthors();
+    this.lastAuthors = this.authorService.getAuthors();
   }
 
+  isThereDataToShow = () => this.lastAuthors.length > 0;
 
 }

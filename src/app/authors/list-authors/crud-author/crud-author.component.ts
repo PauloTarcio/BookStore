@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-crud-author',
@@ -22,13 +23,11 @@ export class CrudAuthorComponent implements OnInit {
     private route: ActivatedRoute,
     private authroService: AuthorService,
     private form: FormBuilder,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
-    if (this.isOnEdition) {
-    } else {
-       this.toCreateForm();
-    }
+    this.toCreateForm();
   }
 
   toCreateForm() {
@@ -39,7 +38,13 @@ export class CrudAuthorComponent implements OnInit {
     })
   };
 
-  onSubmit(){}
+  toResetForm = () => this.authorForm.reset()
+
+  onSubmit = () => this.submitted = true
+
+  toCancelOperation = () => this.location.back();
+
+  isFormInvalid = (controls) => this.submitted && !this.authorForm.controls[controls].value
 
 
 

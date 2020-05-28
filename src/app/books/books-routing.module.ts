@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: ListBooksComponent },
   { path: 'listBooks', component: ListBooksComponent },
   { path: 'crudBook/new', component: CrudBookComponent },
-  { path: 'crudBook/:id', component: CrudBookComponent },
+  { path: 'crudBook/:id/view', component: CrudBookComponent },
   { path: 'crudBook/:id/edit', component: CrudBookComponent }
 ];
 

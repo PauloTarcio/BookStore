@@ -1,3 +1,4 @@
+import { SearchModule } from './../shared/components/search/search.module';
 import { LastAuthorsComponent } from './last-authors/last-authors.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     AuthorsRoutingModule,
-    TableInfoModule
+    TableInfoModule,
+    SearchModule,
   ]
 })
 export class AuthorsModule { }

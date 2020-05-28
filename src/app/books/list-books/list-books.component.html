@@ -1,4 +1,4 @@
-<header class="grid mt-3">
+<header class="grid">
   <h2>Register Books</h2>
   <div class='searching'>
     <app-search></app-search>
@@ -8,8 +8,8 @@
 <hr />
 
 <app-table-info
-  [datas]="books"
-  caption="Books"
-  [tableheaders]="['#Id', 'Name', 'Author', 'Genre', 'Action']"
   rota = "books/crudBook"
+  [datas]="books"
+  [tableheaders]="['#Id', 'Name', 'Author', 'Genre', 'Action']"
+  caption="Books"
 ></app-table-info>

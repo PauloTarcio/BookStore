@@ -1,3 +1,4 @@
+import { GenreService } from './../../shared/services/genre.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListGenresComponent implements OnInit {
 
-  constructor() { }
+  genres;
+
+  constructor(private genreService: GenreService) { }
 
   ngOnInit(): void {
+    this.getAllGenres();
   }
+
+
+  getAllGenres = () => this.genres = this.genreService.getGenres();
 
 }

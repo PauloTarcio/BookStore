@@ -1,8 +1,15 @@
 <h2 class="font-weight-bold mb-2">Last 5 books</h2>
 <p class="font-italic text-muted mb-4">Últimos livros cadastrados no sistema.</p>
 
-<div class="container flex">
-  <div *ngFor="let lastbook of lastbooks">
-    <app-book-cards [cardBook] = "lastbook"></app-book-cards>
+<div class="container">
+  <div class='text-center' *ngIf="!isThereDataToShow()">
+    <h5>Nenhum livro cadastrado ainda.</h5>
+    <a> Clique aqui para iniciar.</a>
+  </div>
+
+  <div class="flex" *ngIf="isThereDataToShow()">
+    <div *ngFor="let lastbook of lastbooks">
+      <app-book-cards [cardBook]="lastbook"></app-book-cards>
+    </div>
   </div>
 </div>

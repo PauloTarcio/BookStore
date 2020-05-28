@@ -5,7 +5,7 @@
 
 <div class="shadow p-3 mb-5 bg-white rounded">
 
-  <form [formGroup] ="bookForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="bookForm">
 
     <div class="form-row">
 
@@ -15,18 +15,18 @@
           <label for="inputEmail4">Book's Name : </label>
           <input type="text" class="form-control" formControlName="name" placeholder="Ex: Alice in the Wonderland" />
         </div>
-        <span *ngIf="submitted" class="alert alert-danger"> Provide a valide name, please.</span>
+        <span *ngIf="isFormInvalid('name')" class="alert alert-danger"> Please provide a valide name.</span>
       </div>
 
       <div class="col-md-4 mb-3">
         <div class="form-group">
           <label for="inputState">Genre : </label>
-          <select id="inputState" class="form-control"  formControlName="genre">
+          <select id="inputState" class="form-control" formControlName="genre">
             <option selected>Choose...</option>
             <option>...</option>
           </select>
         </div>
-        <span *ngIf="submitted" class="alert alert-danger"> Please select a Genre</span>
+        <span *ngIf="isFormInvalid('genre')" class="alert alert-danger"> Please select a Genre</span>
       </div>
 
     </div>
@@ -36,12 +36,12 @@
       <div class="col-md-6 mb-3">
         <div class='form-group'>
           <label for="inputAddress">Author : </label>
-          <select id="inputState" class="form-control" formControlName="author" >
+          <select id="inputState" class="form-control" formControlName="author">
             <option selected>Choose a author</option>
             <option *ngFor="let author of authors">{{author.Name}}</option>
           </select>
         </div>
-        <span *ngIf="submitted" class="alert alert-danger">Please select a Author</span>
+        <span *ngIf="isFormInvalid('author')" class="alert alert-danger">Please select a Author</span>
       </div>
 
       <div class="col-md-3 mb-3">
@@ -49,7 +49,7 @@
           <label for="inputZip">Pages Total :</label>
           <input type="number" class="form-control" id="inputPages" formControlName="pages">
         </div>
-        <span *ngIf="submitted" class="alert alert-danger"> Invalid pages.</span>
+        <span *ngIf="isFormInvalid('pages')" class="alert alert-danger"> Invalid pages.</span>
       </div>
 
       <div class='col-md-3 mb-3'>
@@ -57,7 +57,7 @@
           <label for="publishcompany">Publishing company :</label>
           <input type="text" class="form-control" id="publishcompany" formControlName="publishcompany">
         </div>
-        <span *ngIf="submitted" class="alert alert-danger"> Invalid publishing company.</span>
+        <span *ngIf="isFormInvalid('publishcompany')" class="alert alert-danger"> Invalid publishing company.</span>
       </div>
 
     </div>
@@ -70,7 +70,7 @@
           <label>Abstract :</label>
           <textarea class="form-control" rows="5" formControlName="abstract"></textarea>
         </div>
-        <span *ngIf="submitted" class="alert alert-danger">Provide a valide abstract.</span>
+        <span *ngIf="isFormInvalid('abstract')" class="alert alert-danger">Provide a valide abstract.</span>
       </div>
     </div>
 
@@ -80,14 +80,14 @@
           <label>Book's cover :</label>
           <input type="file" class="form-control-file" formControlName="cover">
         </div>
-        <span *ngIf="submitted" class="alert alert-danger">Please select a cover</span>
+        <span *ngIf="isFormInvalid('cover')" class="alert alert-danger">Please select a cover</span>
       </div>
 
     </div>
 
     <div class="text-right">
       <button type="button" class="btn btn-outline-secondary mr-3" (click)='toCancelOperation()'>Cancel</button>
-      <button type="submit" class="btn btn-primary" *ngIf=!isOnEdition>Save</button>
+      <button type="submit" class="btn btn-primary" *ngIf=!isOnEdition (click)='onFormSubmit()'>Save</button>
     </div>
   </form>
 

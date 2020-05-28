@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: ListAuthorsComponent },
   { path: 'listAuthors', component: ListAuthorsComponent },
   { path: 'crudAuthor/new', component: CrudAuthorComponent },
-  { path: 'crudAuthor/:id', component: CrudAuthorComponent },
+  { path: 'crudAuthor/:id/view', component: CrudAuthorComponent },
   { path: 'crudAuthor/:id/edit', component: CrudAuthorComponent }
 ];
 

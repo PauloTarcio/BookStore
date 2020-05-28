@@ -16,8 +16,8 @@ export class LastbooksComponent implements OnInit {
     this.getLastBooks();
   }
 
-  getLastBooks() {
-    this.lastbooks = this.bookService.getLastBooks();
-  }
+  getLastBooks = () => this.lastbooks = this.bookService.getLastBooks();
+
+  isThereDataToShow = () => this.lastbooks.length > 0;
 
 }
