@@ -1,0 +1,7 @@
+.grid {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.searching { width: 400px; }

@@ -1,6 +1,1 @@
-.grid {
-  display: inline-flex;
-  width: 100%;
-}
-
-.searching { width: 400px; }
+@import '../../shared/css/css-header-list';
