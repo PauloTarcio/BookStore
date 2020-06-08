@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'books', loadChildren: () => import('./books/books.module').then((m) => m.BooksModule) },
   { path: 'authors',  loadChildren: () => import('./authors/authors.module').then((m) => m.AuthorsModule) },
   { path: 'genres',  loadChildren: () => import('./genres/genres.module').then((m) => m.GenresModule) },
+  { path: 'leans', loadChildren: () => import ('./lean-book/lean-book.module').then((m) => m.LeanBookModule) },
+  { path: 'reservations', loadChildren: () => import ('./reservation/reservation.module').then((m) => m.ReservationModule) },
 
   { path: '**', component: PageNotFoundComponent  },
   ];

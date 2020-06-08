@@ -55,11 +55,11 @@ export class CrudBookComponent implements OnInit {
 
   toResetForm = () => this.bookForm.reset()
 
-  onFormSubmit = () => this.submitted = true;
+  onFormSubmit = () => this.submitted = true
 
-  toCancelOperation = () => this.location.back();
+  toCancelOperation = () => this.location.back()
 
-  toGetAuthors = () => this.authors = this.authorService.getAuthors();
+  toGetAuthors = () => this.authors = this.authorService.getAuthors()
 
   isFormInvalid = (controls) => this.submitted && !this.bookForm.controls[controls].value
 

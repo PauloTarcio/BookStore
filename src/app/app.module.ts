@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MenuPrincipalHorizontalComponent } from './shared/components/menu-principal-horizontal/menu-principal-horizontal.component';
+import { MainHorizontalNavComponent } from './shared/components/main-horizontal-nav/main-horizontal-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuPrincipalHorizontalComponent,
+    MainHorizontalNavComponent,
   ],
   imports: [
     BrowserModule,

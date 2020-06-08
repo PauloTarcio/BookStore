@@ -1,0 +1,6 @@
+@import '../../shared/css/css-header-list';
+
+.flex{
+  display: inline-flex;
+  flex-wrap: wrap;
+}

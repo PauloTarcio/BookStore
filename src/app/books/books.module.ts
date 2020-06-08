@@ -13,7 +13,7 @@ import { TableInfoModule } from './../shared/components/table-info/table-info.mo
 
 @NgModule({
   declarations: [LastbooksComponent, BookCardsComponent, ListBooksComponent, CrudBookComponent],
-  exports:[LastbooksComponent],
+  exports:[LastbooksComponent, BookCardsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

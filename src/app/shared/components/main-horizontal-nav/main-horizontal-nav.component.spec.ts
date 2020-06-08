@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuPrincipalHorizontalComponent } from './menu-principal-horizontal.component';
+import { MainHorizontalNavComponent } from './main-horizontal-nav.component';
 
 describe('MenuPrincipalHorizontalComponent', () => {
-  let component: MenuPrincipalHorizontalComponent;
-  let fixture: ComponentFixture<MenuPrincipalHorizontalComponent>;
+  let component: MainHorizontalNavComponent;
+  let fixture: ComponentFixture<MainHorizontalNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuPrincipalHorizontalComponent ]
+      declarations: [ MainHorizontalNavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuPrincipalHorizontalComponent);
+    fixture = TestBed.createComponent(MainHorizontalNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,12 @@
+.card { display: flex; }
+
+.card-horizontal {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+}
+
+.img-card > img{
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
+}
