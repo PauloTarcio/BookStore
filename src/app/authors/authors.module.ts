@@ -1,5 +1,4 @@
 import { SearchModule } from './../shared/components/search/search.module';
-import { LastAuthorsComponent } from './last-authors/last-authors.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,8 +10,8 @@ import { CrudAuthorComponent } from './list-authors/crud-author/crud-author.comp
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [LastAuthorsComponent, AuthorsCardComponent, ListAuthorsComponent, CrudAuthorComponent],
-  exports: [LastAuthorsComponent],
+  declarations: [AuthorsCardComponent, ListAuthorsComponent, CrudAuthorComponent],
+  exports: [AuthorsCardComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -1,0 +1,21 @@
+<header class="grid">
+  <h2>Make a Lean</h2>
+  <div class='searching'>
+    <app-search></app-search>
+  </div>
+</header>
+
+<hr />
+
+<div class="books">
+  <div class='text-center' >
+    <h5>Nenhum livro cadastrado ainda.</h5>
+    <a> Clique aqui para iniciar.</a>
+  </div>
+
+  <div class="flex">
+    <div *ngFor="let book of books">
+      <app-book-cards [cardBook]="book"></app-book-cards>
+    </div>
+  </div>
+</div>

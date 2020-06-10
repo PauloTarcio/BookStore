@@ -1,6 +1,5 @@
-picture > img {
-  opacity: 0.9;
-}
+picture > img { opacity: 0.9; }
+
 .title {
   color:#343a40;
   position: absolute;
@@ -10,3 +9,6 @@ picture > img {
 }
 
 .searching { width: 600px; }
+.books{
+  width: 100%;
+}

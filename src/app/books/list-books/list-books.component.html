@@ -1,15 +1,22 @@
 <header class="grid">
   <h2>Register Books</h2>
-  <div class='searching'>
+  <div class="searching">
     <app-search></app-search>
   </div>
 </header>
 
 <hr />
 
-<app-table-info
-  rota = "books/crudBook"
-  [datas]="books"
-  [tableheaders]="['#Id', 'Name', 'Author', 'Genre', 'Action']"
-  caption="Books"
-></app-table-info>
+<div class="mt-4">
+  <button type="button" class="btn btn-outline-primary mb-4">New</button>
+  <div *ngFor="let book of books">
+    <app-book-cards
+      [cardBook]="book"
+      [details]="true"
+      [edit]="true"
+      [lean]="true"
+      [reservation]="true"
+      [delete]="true"
+    ></app-book-cards>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MainHorizontalNavComponent } from './shared/components/main-horizontal-nav/main-horizontal-nav.component';
+import { MainHorizontalNavComponent } from './shared/components/layout/main-horizontal-nav/main-horizontal-nav.component';
 
 @NgModule({
   declarations: [

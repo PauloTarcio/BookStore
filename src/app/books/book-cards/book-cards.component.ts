@@ -8,6 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BookCardsComponent implements OnInit {
 
   @Input() cardBook;
+  @Input() details = false;
+  @Input() edit = false;
+  @Input() lean = false;
+  @Input() reservation = false;
+  @Input() delete = false;
 
   constructor() { }
 

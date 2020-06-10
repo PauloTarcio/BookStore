@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LastAuthorsComponent } from './last-authors.component';
+import { LeanBooksComponent } from './lean-books.component';
 
-describe('LastAuthorsComponent', () => {
-  let component: LastAuthorsComponent;
-  let fixture: ComponentFixture<LastAuthorsComponent>;
+describe('LeanBooksComponent', () => {
+  let component: LeanBooksComponent;
+  let fixture: ComponentFixture<LeanBooksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LastAuthorsComponent ]
+      declarations: [ LeanBooksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LastAuthorsComponent);
+    fixture = TestBed.createComponent(LeanBooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

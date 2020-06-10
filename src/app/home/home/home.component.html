@@ -14,8 +14,38 @@
     </div>
   </div>
 
-  <app-lastbooks></app-lastbooks>
+  <div class="books">
+    <h2 class="font-weight-bold mb-2 mt-4">Last 5 books available</h2>
+    <p class="font-italic text-muted mb-4">Últimos livros cadastrados no sistema.</p>
 
-  <app-last-authors></app-last-authors>
+    <div class='text-center' *ngIf="!isThereDataToShow()">
+      <h5>Nenhum livro cadastrado ainda.</h5>
+      <a> Clique aqui para iniciar.</a>
+    </div>
+
+    <div class="d-inline-flex flex-wrap" *ngIf="isThereDataToShow()">
+      <div *ngFor="let book of books">
+        <app-book-cards [cardBook]="book" [details]=true></app-book-cards>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="authors">
+    <h2 class="font-weight-bold mb-2 mt-4">Last 5 Authors</h2>
+    <p class="font-italic text-muted mb-4">Ultimos autores cadastrados no sistema.</p>
+
+    <div class='text-center' *ngIf="!isThereAuthorToShow()">
+      <h5>Nenhum author cadastrado ainda.</h5>
+      <a> Clique aqui para iniciar.</a>
+    </div>
+
+    <div class="d-inline-flex flex-wrap" *ngIf="isThereAuthorToShow()">
+      <div *ngFor="let author of authors">
+        <app-authors-card [author]="author"></app-authors-card>
+      </div>
+    </div>
+
+  </div>
 
 </div>

@@ -3,28 +3,24 @@
   <hr>
 </div>
 
-<div class="shadow p-3 mb-5 bg-white rounded">
+<form [formGroup]="genreForm" (ngSubmit)="onSubmit()">
 
-  <form [formGroup]="genreForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
 
-    <div class="form-row">
+    <div class="col-md-12 mb-3">
 
-      <div class="col-md-12 mb-3">
-
-        <div class="form-group">
-          <label for="inputEmail4">Genre's Name : </label>
-          <input type="text" class="form-control" formControlName="name" placeholder="Ex: Alice in the Wonderland" />
-        </div>
-        <span *ngIf="isFormInvalid('name')" class="alert alert-danger"> Provide a valide name, please.</span>
+      <div class="form-group">
+        <label for="inputEmail4">Genre's Name : </label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Ex: Alice in the Wonderland" />
       </div>
-
+      <span *ngIf="isFormInvalid('name')" class="alert alert-danger"> Provide a valide name, please.</span>
     </div>
 
-    <div class="text-right">
-      <button type="button" class="btn btn-outline-secondary mr-3" (click) ="toCancelOperation()">Cancel</button>
-      <button type="submit" class="btn btn-primary" *ngIf="!isOnEdition">Save</button>
-    </div>
+  </div>
 
-  </form>
+  <div class="text-right">
+    <button type="button" class="btn btn-outline-secondary mr-3" (click)="toCancelOperation()">Cancel</button>
+    <button type="submit" class="btn btn-primary" *ngIf="!isOnEdition">Save</button>
+  </div>
 
-</div>
+</form>
