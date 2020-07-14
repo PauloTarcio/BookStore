@@ -1,5 +1,5 @@
-import { SearchModule } from './../shared/components/search/search.module';
-import { NgModule } from '@angular/core';
+import { SearchComponent } from './../shared/components/search/search/search.component';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home/home.component';
@@ -12,9 +12,9 @@ import { AuthorsModule } from '../authors/authors.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SearchModule,
     BooksModule,
     AuthorsModule,
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }

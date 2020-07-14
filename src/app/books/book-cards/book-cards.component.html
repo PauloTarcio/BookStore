@@ -3,11 +3,16 @@
   <div class="mask">
     <div class="content">
       <h2>{{cardBook.Name}}</h2>
-      <a class="action" *ngIf="details" [routerLink]="['/crudBook/' + cardBook.Id + '/view']">Details</a>
-      <a class="action" *ngIf="edit">Edit</a>
+      <a class="action" *ngIf="details" [routerLink]="['crudBook/' + cardBook.Id + '/view']">Details</a>
+      <a class="action" *ngIf="edit" [routerLink]="['crudBook/' + cardBook.Id + '/edit']">Edit</a>
       <a class="action" *ngIf="lean">Do a lean</a>
       <a class="action" *ngIf="reservation">Make a reservation</a>
       <a class="action" *ngIf="delete">Delete</a>
     </div>
   </div>
 </div>
+
+
+
+
+

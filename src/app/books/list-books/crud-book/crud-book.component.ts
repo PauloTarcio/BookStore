@@ -1,66 +1,51 @@
 import { AuthorService } from './../../../shared/services/author.service';
-import { BookService } from './../../../shared/services/book.service';
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {Location} from '@angular/common';
+import { Component, Injector } from '@angular/core';
+import { CadastroBase } from 'src/app/shared/base/CadastroBase';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-crud-book',
   templateUrl: './crud-book.component.html',
   styleUrls: ['./crud-book.component.css']
 })
-export class CrudBookComponent implements OnInit {
+export class CrudBookComponent extends CadastroBase {
 
-  isOnEdition = false;
   book;
+  bookId;
   authors;
-  bookForm: FormGroup;
-  subscription: Subscription;
-  submitted = false;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private form: FormBuilder,
-    private bookService: BookService,
     private authorService: AuthorService,
-    private location: Location,
-    ) { }
+    public injector: Injector,
+  ) {super(injector);}
 
   ngOnInit() {
+    // this.toGetAuthors();
+    // this.toSubscribeBook();
+    if (this.isView) {
+      this.toSubscribeBook();
+    } else {
       this.toCreateForm();
+    }
   }
 
   toCreateForm() {
-    this.bookForm = this.form.group({
-      name: ['', Validators.required],
-      genre: ['', Validators.required],
-      author: ['', Validators.required],
-      pages: ['', Validators.required],
-      publishcompany: ['', Validators.required],
-      abstract: ['', Validators.required],
-      cover: ['', Validators.required],
+    this.form = new FormGroup({
+      name: new FormControl(['', Validators.required]),
+      genre: new FormControl(['', Validators.required]),
+      author: new FormControl(['', Validators.required]),
+      pages: new FormControl(['', Validators.required]),
+      publishcompany: new FormControl(['', Validators.required]),
+      abstract: new FormControl(['', Validators.required]),
+      cover: new FormControl(['', Validators.required]),
     })
-
-    this.toGetAuthors();
   };
 
-  toGetBookInfoById() {
-    this.subscription = this.route.params
-    .subscribe(params => { this.book = params.id;});
-    this.toGetAuthors();
-  }
+  toSubscribeBook = () => this.route.params.subscribe(params => this.bookId = params.id);
 
-  toResetForm = () => this.bookForm.reset()
-
-  onFormSubmit = () => this.submitted = true
-
-  toCancelOperation = () => this.location.back()
+  // toGetBookInformation = () => this.bookService.getBookById(this.bookId).subscribe(response => {this.book = response;});
 
   toGetAuthors = () => this.authors = this.authorService.getAuthors()
 
-  isFormInvalid = (controls) => this.submitted && !this.bookForm.controls[controls].value
 
 }

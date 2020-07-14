@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -92,7 +93,6 @@ export class BookService {
     return this.books
   }
 
-  getBookById(id){
-    return this.books;
-  }
+  // getBookById = (id): Observable<any> => this.httpClient.get(`$`).pipe(map(response => response));
+
 }

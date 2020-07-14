@@ -6,7 +6,6 @@ import { GenresRoutingModule } from './genres-routing.module';
 import { ListGenresComponent } from './list-genres/list-genres.component';
 import { TableInfoModule } from '../shared/components/table-info/table-info.module';
 import { CrudGenreComponent } from './list-genres/crud-genre/crud-genre.component';
-import { SearchModule } from '../shared/components/search/search.module';
 
 
 @NgModule({
@@ -15,8 +14,7 @@ import { SearchModule } from '../shared/components/search/search.module';
     CommonModule,
     GenresRoutingModule,
     ReactiveFormsModule,
-    SearchModule,
-    TableInfoModule
+    TableInfoModule,
   ]
 })
 export class GenresModule { }

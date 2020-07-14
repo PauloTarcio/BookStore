@@ -10,7 +10,7 @@ const routes: Routes = [
 
   { path: '', component: ListBooksComponent },
 
-  { path: 'listBooks', component: ListBooksComponent },
+  { path: 'listBooks', redirectTo: '', },
 
   { path: 'crudBook/new', component: CrudBookComponent },
 

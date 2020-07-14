@@ -1,0 +1,13 @@
+<button
+type='button'
+class='btn btn-outline-primary'
+[routerLink]="['crudUsers/new']"
+>
+  New
+</button>
+
+<div class="listOfUsers mt-3">
+  <div *ngFor= "let user of users">
+    <app-card-info [info]="user"></app-card-info>
+  </div>
+</div>
