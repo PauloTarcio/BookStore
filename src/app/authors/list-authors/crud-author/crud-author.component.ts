@@ -1,51 +1,34 @@
-import { AuthorService } from 'src/app/shared/services/author.service';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component, Injector, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import {Location} from '@angular/common';
+import { CadastroBase } from 'src/app/shared/base/CadastroBase';
 
 @Component({
   selector: 'app-crud-author',
   templateUrl: './crud-author.component.html',
   styleUrls: ['./crud-author.component.css']
 })
-export class CrudAuthorComponent implements OnInit {
+export class CrudAuthorComponent extends CadastroBase {
 
-  isOnEdition = true;
   author;
-  authorForm: FormGroup;
-  subscription: Subscription;
-  submitted = false;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private authroService: AuthorService,
-    private form: FormBuilder,
-    private location: Location
-  ) { }
+    public injector: Injector,
+    public location: Location,
+  ) {super(injector, location);}
 
-  ngOnInit(): void {
-    this.toCreateForm();
+  onInit(){
+    this.ngOnInit();
   }
 
   toCreateForm() {
-    this.authorForm = this.form.group({
-      name: ['', Validators.required],
-      sex: ['', Validators.required],
-      photo: ['', Validators.required],
+    this.form = new FormGroup({
+      name: new FormControl(['', Validators.required]),
+      sex: new FormControl(['', Validators.required]),
+      photo: new FormControl(['', Validators.required]),
     })
   };
 
-  toResetForm = () => this.authorForm.reset()
-
-  onSubmit = () => this.submitted = true
-
-  toCancelOperation = () => this.location.back();
-
-  isFormInvalid = (controls) => this.submitted && !this.authorForm.controls[controls].value
-
-
+  toSave(){};
 
 }

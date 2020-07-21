@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <label for="inputEmail4">Book's Name : </label>
-        <input type="text" class="form-control" formControl='name' placeholder="Ex: Alice in the Wonderland" />
+        <input type="text" class="form-control" formControlName='name' placeholder="Ex: Alice in the Wonderland" />
       </div>
       <span *ngIf="isFormInvalid('name')" class="alert alert-danger"> Please provide a valide name.</span>
     </div>
@@ -19,7 +19,7 @@
     <div class="col-md-4 mb-3">
       <div class="form-group">
         <label for="inputState">Genre : </label>
-        <select id="inputState" class="form-control" formControl='genre'>
+        <select id="inputState" class="form-control" formControlName='genre'>
           <option selected>Choose...</option>
           <option>...</option>
         </select>
@@ -34,7 +34,7 @@
     <div class="col-md-10 mb-3">
       <div class='form-group'>
         <label for="inputAddress">Author : </label>
-        <select id="inputState" class="form-control" formControl="author">
+        <select id="inputState" class="form-control" formControlName="author">
           <option selected>Choose a author</option>
           <option *ngFor="let author of authors">{{author.Name}}</option>
         </select>
@@ -45,7 +45,7 @@
     <div class="col-md-2 mb-3">
       <div class="form-group">
         <label for="inputZip">Pages Total :</label>
-        <input type="number" class="form-control" id="inputPages" formControl="pages">
+        <input type="number" class="form-control" id="inputPages" formControlName="pages">
       </div>
       <span *ngIf="isFormInvalid('pages')" class="alert alert-danger"> Invalid pages.</span>
     </div>
@@ -58,7 +58,7 @@
 
       <div class="form-group ">
         <label>Abstract :</label>
-        <textarea class="form-control" rows="5" formControl="abstract"></textarea>
+        <textarea class="form-control" rows="5" formControlName="abstract"></textarea>
       </div>
       <span *ngIf="isFormInvalid('abstract')" class="alert alert-danger">Provide a valide abstract.</span>
     </div>
@@ -77,6 +77,6 @@
 
   <div class="text-right">
     <button type="button" class="btn btn-outline-secondary mr-3" (click)='toCancel()'>Cancel</button>
-    <button type="submit" class="btn btn-primary" *ngIf=!toVerifyUrl (click)='onFormSubmit()'>Save</button>
+    <button type="submit" class="btn btn-primary" *ngIf="!isView" (click)='toSubmit()'>Save</button>
   </div>
 </form>

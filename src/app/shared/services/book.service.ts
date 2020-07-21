@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class BookService {
 
   books = [{
-    Id: 1,
+    id: 1,
     Cover: 'https://m.media-amazon.com/images/I/51DgYTEd49L.jpg',
     Name: 'Harry Potter e a Pedra Filosofal',
     Author: 'J.K Rowling',
@@ -18,7 +18,7 @@ export class BookService {
     Lent: true,
   },
   {
-    Id: 2,
+    id: 2,
     Cover: 'https://m.media-amazon.com/images/I/51qbxOEtBrL.jpg',
     Name: 'Harry Potter e A Câmara Secreta',
     Author: 'Paulo Vinicius de Oliveira Tárcio',
@@ -27,7 +27,7 @@ export class BookService {
     Lent: false,
   },
   {
-    Id: 3,
+    id: 3,
     Cover: 'https://m.media-amazon.com/images/I/41prSQnkSiL.jpg',
     Name: 'Harry Potter e a O Prisioneiro de Askabam',
     Author: 'J.K Rowling',
@@ -36,7 +36,7 @@ export class BookService {
     Lent: true,
   },
   {
-    Id: 4,
+    id: 4,
     Cover: 'https://m.media-amazon.com/images/I/511p8jnsATL.jpg',
     Name: 'Harry Potter e O Calice de Fogo',
     Author: 'J.K Rowling',
@@ -45,7 +45,7 @@ export class BookService {
     Lent: false,
   },
   {
-    Id: 5,
+    id: 5,
     Cover: 'https://m.media-amazon.com/images/I/41I1NK83piL.jpg',
     Name: 'Harry Potter e a Ordem da Fenix',
     Author: 'Vinicius de Oliveira Tárcio',
@@ -54,7 +54,7 @@ export class BookService {
     Lent: true,
   },
   {
-    Id: 6,
+    id: 6,
     Cover: 'https://m.media-amazon.com/images/I/516lFndZ+cL.jpg',
     Name: 'Orgulho de Preconceito',
     Author: 'Jane Austen',
@@ -63,7 +63,7 @@ export class BookService {
     Lent: false,
   },
   {
-    Id: 7,
+    id: 7,
     Cover: 'https://m.media-amazon.com/images/I/51tWWKmO72L.jpg',
     Name: 'Rei Leão',
     Author: '??',
@@ -72,7 +72,7 @@ export class BookService {
     Lent: true,
   },
   {
-    Id: 8,
+    id: 8,
     Cover: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTSmfwrB_JwYLAzE_mXU2EEtTPmQl0C9VTpQbnh9KHOs2ZzFbhoozSKedSJ8OqfT5YXvvxZ-vD5iHc4Qvfwh11bFKuM3Xfi&usqp=CAE',
     Name: 'O Poderoso Chefão',
     Author: 'Mario Puzo',

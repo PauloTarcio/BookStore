@@ -1,7 +1,8 @@
 import { AuthorService } from './../../../shared/services/author.service';
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { CadastroBase } from 'src/app/shared/base/CadastroBase';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-crud-book',
@@ -17,27 +18,22 @@ export class CrudBookComponent extends CadastroBase {
   constructor(
     private authorService: AuthorService,
     public injector: Injector,
-  ) {super(injector);}
+    public location: Location,
+  ) {super(injector, location);}
 
-  ngOnInit() {
-    // this.toGetAuthors();
-    // this.toSubscribeBook();
-    if (this.isView) {
-      this.toSubscribeBook();
-    } else {
-      this.toCreateForm();
-    }
+  onInit(){
+    this.ngOnInit();
   }
 
   toCreateForm() {
     this.form = new FormGroup({
-      name: new FormControl(['', Validators.required]),
-      genre: new FormControl(['', Validators.required]),
-      author: new FormControl(['', Validators.required]),
-      pages: new FormControl(['', Validators.required]),
-      publishcompany: new FormControl(['', Validators.required]),
-      abstract: new FormControl(['', Validators.required]),
-      cover: new FormControl(['', Validators.required]),
+      name: new FormControl('',[Validators.required]),
+      genre: new FormControl('',[Validators.required]),
+      author: new FormControl('',[Validators.required]),
+      pages: new FormControl('',[Validators.required]),
+      publishcompany: new FormControl('',[Validators.required]),
+      abstract: new FormControl('',[Validators.required]),
+      cover: new FormControl('',[Validators.required]),
     })
   };
 
@@ -46,6 +42,8 @@ export class CrudBookComponent extends CadastroBase {
   // toGetBookInformation = () => this.bookService.getBookById(this.bookId).subscribe(response => {this.book = response;});
 
   toGetAuthors = () => this.authors = this.authorService.getAuthors()
+
+  toSave(){}
 
 
 }

@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CadastroBase } from 'src/app/shared/base/CadastroBase';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component, Injector } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import {Location} from '@angular/common';
 
 @Component({
@@ -10,28 +9,22 @@ import {Location} from '@angular/common';
   templateUrl: './crud-genre.component.html',
   styleUrls: ['./crud-genre.component.css']
 })
-export class CrudGenreComponent implements OnInit {
+export class CrudGenreComponent extends CadastroBase {
 
-  isOnEdition = false;
   genres;
-  genreForm: FormGroup;
-  subscription: Subscription;
-  submitted = false;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private location: Location,
-    private form: FormBuilder,
-  ) { }
+    public injector: Injector,
+    public location: Location,
+  ) {super(injector, location);}
 
-  ngOnInit(): void {
-    this.toCreateForm();
+  onInit(){
+    this.ngOnInit();
   }
 
   toCreateForm() {
-    this.genreForm = this.form.group({
-      name: ['', Validators.required],
+    this.form = new FormGroup({
+      name: new FormControl('',[Validators.required])
     })
   };
 
@@ -40,12 +33,6 @@ export class CrudGenreComponent implements OnInit {
     .subscribe(params => { this.genres = params.id;});
   }
 
-  toResetForm = () => this.genreForm.reset()
-
-  onSubmit = () => this.submitted = true;
-
-  toCancelOperation = () => this.location.back();
-
-  isFormInvalid = (controls: string) => this.submitted && !this.genreForm.controls[controls].value
+  toSave(){}
 
 }

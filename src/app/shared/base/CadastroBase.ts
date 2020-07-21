@@ -1,39 +1,47 @@
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+
 import { OnInit, OnDestroy, Injector } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 export abstract class CadastroBase implements OnInit, OnDestroy {
 
-  protected subscribtion = new Subscription();
-  private location: Location;
+  protected subscription = new Subscription();
   public route: ActivatedRoute;
-  form: FormGroup;
-  submitted
+  public form: FormGroup;
+  submitted = false;
   isView = false;
+  id;
 
-  protected constructor(public injector: Injector){
+  protected constructor(
+    public injector: Injector,
+    public location: Location,
+    ){
     this.route = injector.get(ActivatedRoute);
   }
 
-  ngOnInit(){}
+  ngOnInit(): void {
+    this.toSubscriptionId();
+    this.toCreateForm();
+  }
 
-  toSave(){}
+  abstract toSave()
 
   abstract toCreateForm();
 
-  isFormInvalid = (controls) => this.submitted && !this.form.controls[controls].value
+  toSubscriptionId = () =>this.subscription = this.route.params.subscribe(params => this.id = params.id);
 
-  toVerifyUrl = () => window.location.href.match('/view') ? this.isView = true: false;
+  isFormInvalid = (controls) => this.submitted && !this.form.controls[controls].value;
 
-  onFormSubmit = () => this.submitted = true
+  toVerifyUrl = ()=> window.location.href.match('/view') ? this.isView = true : false;
 
-  toCancel = () => this.location.back()
+  toSubmit = () => this.submitted = true;
 
-  toReset = () => this.form.reset()
+  toCancel = () => this.location.back();
 
-  ngOnDestroy = () => this.subscribtion.unsubscribe()
+  toReset = () => this.form.reset();
 
+  ngOnDestroy = () => this.subscription.unsubscribe();
 
 }

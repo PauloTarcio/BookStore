@@ -6,11 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: ListUsersComponent },
-
-  { path:'listUsers', redirectTo: ''},
-
-  {path: 'crudUsers/new', component: CrudUsersComponent },
-
+  { path: 'listUsers', redirectTo: '', },
+  { path: 'crudUser/new', component: CrudUsersComponent },
 ];
 
 @NgModule({

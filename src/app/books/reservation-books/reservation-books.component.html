@@ -1,12 +1,19 @@
-<form>
-
-  <div class="form-group">
-    <label>User: </label>
-    <input type="text" class="form-control" placeholder="Paulo Vinicius de Oliveira Tárcio">
+<div class="form-group">
+  <label>CPF:</label>
+  <div class="input-group">
+    <input id="cpf" class="form-control" placeholder="xxx.xxx.xxx-xx">
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary ml-2"
+      type="submit">
+      <i class="fas fa-search"></i>
+    </button>
+    </div>
   </div>
 
-  <!-- <div class="text-right">
-    <button type="button" class="btn btn-outline-secondary mr-3" (click)='toCancelOperation()'>Cancel</button>
-    <button type="submit" class="btn btn-primary" *ngIf=!isOnEdition (click)='onFormSubmit()'>Save</button>
-  </div> -->
-</form>
+  <button class="btn btn-outline-primary ml-2"
+  type="submit">
+  Do Reservation
+  </button>
+
+</div>
+

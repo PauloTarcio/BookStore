@@ -2,8 +2,3 @@
   display:grid;
   grid-gap:10px;
 }
-
-.submit{
-  width: 100%;
-  text-align: right;
-}

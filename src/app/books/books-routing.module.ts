@@ -9,17 +9,11 @@ import { ReservationBooksComponent } from './reservation-books/reservation-books
 const routes: Routes = [
 
   { path: '', component: ListBooksComponent },
-
   { path: 'listBooks', redirectTo: '', },
-
   { path: 'crudBook/new', component: CrudBookComponent },
-
   { path: 'crudBook/:id/view', component: CrudBookComponent },
-
   { path: 'crudBook/:id/edit', component: CrudBookComponent },
-
   { path: 'listLeans', component: LeanBooksComponent },
-
   { path: 'listReservations', component: ReservationBooksComponent }
 ];
 
